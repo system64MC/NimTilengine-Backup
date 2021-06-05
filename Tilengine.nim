@@ -17,7 +17,7 @@ elif defined(macosx):
     tilenginedll* = "tilengine.dylib"
 else:
   const
-    tilenginedll* = "tilengine.so"
+    tilenginedll* = "libTilengine.so"
 
 ##  version
 
@@ -207,7 +207,7 @@ type
 #  TLN_Engine* = ptr engine
 
 type
-  TLN_Engine* {.bycopy.} = object
+  TLN_Engine* = ptr object
 
 
 ## !< Engine context
@@ -216,7 +216,7 @@ type
 #  TLN_Tile* = ptr tile
 
 type
-  TLN_Tile* {.bycopy.} = object
+  TLN_Tile* = ptr object
 
 ## !< Tile reference
 
@@ -224,7 +224,7 @@ type
 #  TLN_Tileset* = ptr tileset
 
 type
-  TLN_Tileset* {.bycopy.} = object
+  TLN_Tileset* = ptr object
 
 ## !< Opaque tileset reference
 
@@ -232,7 +232,7 @@ type
 #  TLN_Tilemap* = ptr tilemap
 
 type
-  TLN_Tilemap* {.bycopy.} = object
+  TLN_Tilemap* = ptr object
 
 ## !< Opaque tilemap reference
 
@@ -240,7 +240,7 @@ type
 #  TLN_Palette* = ptr palette
 
 type
-  TLN_Palette* {.bycopy.} = object
+  TLN_Palette* = ptr object
 
 ## !< Opaque palette reference
 
@@ -248,7 +248,7 @@ type
 #  TLN_Spriteset* = ptr spriteset
 
 type
-  TLN_Spriteset* {.bycopy.} = object
+  TLN_Spriteset* = ptr object
 
 ## !< Opaque sspriteset reference
 
@@ -256,7 +256,7 @@ type
 #  TLN_Sequence* = ptr sequence
 
 type
-  TLN_Sequence* {.bycopy.} = object
+  TLN_Sequence* = ptr object
 
 ## !< Opaque sequence reference
 
@@ -264,7 +264,7 @@ type
 #  TLN_SequencePack* = ptr sequencePack
 
 type
-  TLN_SequencePack* {.bycopy.} = object
+  TLN_SequencePack* = ptr object
 
 ## !< Opaque sequence pack reference
 
@@ -272,7 +272,7 @@ type
 #  TLN_Bitmap* = ptr bitmap
 
 type
-  TLN_Bitmap* {.bycopy.} = object
+  TLN_Bitmap* = ptr object
 
 ## !< Opaque bitmap reference
 
@@ -280,7 +280,7 @@ type
 #  TLN_ObjectList* = ptr objectList
 
 type
-  TLN_ObjectList* {.bycopy.} = object
+  TLN_ObjectList* = ptr object
 
 ## !< Opaque object list reference
 ## ! Image Tile items for TLN_CreateImageTileset()
