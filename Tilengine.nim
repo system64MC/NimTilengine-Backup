@@ -326,7 +326,7 @@ type
     PLAYER4
 
 type
-  TLN_Input {.importc: "TLN_Input"} = enum
+  TLN_Input* {.size: sizeof(cint).} = enum
     INPUT_NONE
     INPUT_UP
     INPUT_DOWN
