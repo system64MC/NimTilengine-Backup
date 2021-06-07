@@ -2,6 +2,8 @@
 ##  Tilengine - The 2D retro graphics engine with raster effects
 ##  Copyright (C) 2015-2019 Marc Palacios Domenech <mailto:megamarc@hotmail.com>
 ##  All rights reserved
+## 
+##  Nim binding by System64
 ##
 ##  This Source Code Form is subject to the terms of the Mozilla Public
 ##  License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -855,3 +857,5 @@ proc tLN_GetAvailableAnimation*(): cint {.cdecl,
 proc tLN_DisablePaletteAnimation*(index: cint): bool {.cdecl,
     importc: "TLN_DisablePaletteAnimation", dynlib: tilenginedll.}
 ## *@}
+
+let bruh = "SNES is better than Genesis"
