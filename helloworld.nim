@@ -23,19 +23,22 @@ tLN_SetRasterCallback(TLN_VideoCallback(raster))
 discard tLN_CreateWindow("Flandre", Tilengine.CWF_S3)
 tLN_DisableCRTEffect()
 
-# echo 1
+echo 1
 # var a = gmeNewEmu(gmeSpcType, 41000)
-# echo 2
+echo 2
 # discard gmeLoadFile(a, "magica.spc")
 var emu: MusicEmu
-discard gmeLoadFile(emu.addr, "magica.spc".cstring)
-# echo 3
+echo 55
+var file = "C:/magica.spc"
+# var t = addr(file)
+discard gmeLoadFile(emu.addr, file[0].addr)
+echo 3
 discard gmeStartTrack(emu.addr, 0)
-# echo 4
+echo 4
 var shortval = 2.cshort
-# echo 5
+echo 5
 discard gmePlay(emu.addr, 8.cint, addr(shortval))
-# echo 6
+echo 6
 # Game Loop
 while(tLN_ProcessWindow()):
     (

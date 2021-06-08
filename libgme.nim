@@ -207,17 +207,17 @@ type
 ##  Emulator type constants for each supported file type
 
 var
-  gmeAyType* {.importc: "gme_ay_type", dynlib: libgmedll.}: GmeTypeT
-  gmeGbsType* {.importc: "gme_gbs_type", dynlib: libgmedll.}: GmeTypeT
-  gmeGymType* {.importc: "gme_gym_type", dynlib: libgmedll.}: GmeTypeT
-  gmeHesType* {.importc: "gme_hes_type", dynlib: libgmedll.}: GmeTypeT
-  gmeKssType* {.importc: "gme_kss_type", dynlib: libgmedll.}: GmeTypeT
-  gmeNsfType* {.importc: "gme_nsf_type", dynlib: libgmedll.}: GmeTypeT
-  gmeNsfeType* {.importc: "gme_nsfe_type", dynlib: libgmedll.}: GmeTypeT
-  gmeSapType* {.importc: "gme_sap_type", dynlib: libgmedll.}: GmeTypeT
-  gmeSpcType* {.importc: "gme_spc_type", dynlib: libgmedll.}: GmeTypeT
-  gmeVgmType* {.importc: "gme_vgm_type", dynlib: libgmedll.}: GmeTypeT
-  gmeVgzType* {.importc: "gme_vgz_type", dynlib: libgmedll.}: GmeTypeT
+  gmeAyType*: GmeTypeT
+  gmeGbsType*: GmeTypeT
+  gmeGymType*: GmeTypeT
+  gmeHesType*:GmeTypeT
+  gmeKssType*: GmeTypeT
+  gmeNsfType*: GmeTypeT
+  gmeNsfeType*: GmeTypeT
+  gmeSapType*: GmeTypeT
+  gmeSpcType*: GmeTypeT
+  gmeVgmType*: GmeTypeT
+  gmeVgzType*: GmeTypeT
 
 ##  Type of this emulator
 
@@ -238,7 +238,7 @@ proc gmeTypeMultitrack*(a1: GmeTypeT): cint {.cdecl, importc: "gme_type_multitra
 ## ******* Advanced file loading *******
 ##  Error returned if file type is not supported
 
-var gmeWrongFileType* {.importc: "gme_wrong_file_type", dynlib: libgmedll.}: cstring
+var gmeWrongFileType*: cstring
 
 ##  Same as gme_open_file(), but uses file data already in memory. Makes copy of data.
 
@@ -266,7 +266,7 @@ proc gmeNewEmu*(a1: GmeTypeT; sampleRate: cint): ptr MusicEmu {.cdecl,
     importc: "gme_new_emu", dynlib: libgmedll.}
 ##  Load music file into emulator
 
-proc gmeLoadFile*(a1: ptr MusicEmu; path: cstring): GmeErrT {.cdecl,
+proc gmeLoadFile*(a1: ptr MusicEmu; path: ptr char): GmeErrT {.cdecl,
     importc: "gme_load_file", dynlib: libgmedll.}
 ##  Load music file from memory into emulator. Makes a copy of data passed.
 
