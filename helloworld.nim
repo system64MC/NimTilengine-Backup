@@ -1,6 +1,6 @@
 import Tilengine
 import Math
-import libgme
+import Libgme
 
 var #Declaring the frame
     frame = 0
@@ -27,12 +27,14 @@ tLN_DisableCRTEffect()
 # var a = gmeNewEmu(gmeSpcType, 41000)
 # echo 2
 # discard gmeLoadFile(a, "magica.spc")
+var emu: MusicEmu
+discard gmeLoadFile(emu.addr, "magica.spc".cstring)
 # echo 3
-# discard gmeStartTrack(a, 0)
+discard gmeStartTrack(emu.addr, 0)
 # echo 4
-# var shortval = 2.cshort
+var shortval = 2.cshort
 # echo 5
-# discard gmePlay(a, 8.cint, addr(shortval))
+discard gmePlay(emu.addr, 8.cint, addr(shortval))
 # echo 6
 # Game Loop
 while(tLN_ProcessWindow()):
